@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* badge */
 @keyframes float-slow {
   0%, 100% { transform: translateY(0) translateX(0); }
   50% { transform: translateY(-20px) translateX(10px); }
@@ -27,4 +29,26 @@
 
 .animate-float-fast {
   animation: float-fast 4s ease-in-out infinite;
+}
+
+@layer utilities {
+
+  /* Act as a border */
+  .card-wrapper {
+    @apply relative overflow-hidden rounded-2xl bg-[#1c1c1c] ;
+  }
+
+  /* Gradient */
+  .card-wrapper::before {
+    background: conic-gradient(rgba(239, 44, 0) 0deg, transparent 80deg);
+
+    @apply absolute left-[50%] top-[50%] h-[500px] w-[500px] animate-border-spin rounded-2xl;
+    transform: translate(-50%, -50%);
+    content: "";
+  }
+
+  /* Body */
+  .card-content {
+    @apply absolute left-[1px] top-[1px] h-[calc(100%-2px)] w-[calc(100%-2px)] rounded-2xl bg-[#333333];
+  }
 }

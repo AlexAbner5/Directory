@@ -1,0 +1,3 @@
+import { endpoint } from "./strapi";
+
+

@@ -1,6 +1,5 @@
-import type { Config } from 'tailwindcss';
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+const config = {
   darkMode: ['class'],
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,6 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      color: {
+        primary: {regular: '#ef200c', hover:"ff3c0a"},
+        secondary: {regular: '1c1c1c', 100: "3d3d3d", hover: "4d4d4d"},
+        black: '#1a2128',
+        white: '#f5f5f5',
+        grey: '#d9d9d9',
+        border: '#404040',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -62,6 +69,15 @@ const config: Config = {
         },
       },
       keyframes: {
+        // Animación personalizada para rotación del borde
+        'border-spin': {
+          '0%': {
+            transform: 'translate(-50%, -50%) rotate(0deg)',
+          },
+          '100%': {
+            transform: 'translate(-50%, -50%) rotate(360deg)',
+          },
+        },
         'accordion-down': {
           from: {
             height: '0',
@@ -80,6 +96,8 @@ const config: Config = {
         },
       },
       animation: {
+        // Animación personalizada para rotación del borde
+        'border-spin': 'border-spin 5s linear infinite',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
@@ -87,4 +105,6 @@ const config: Config = {
   },
   plugins: [require('tailwindcss-animate')],
 };
+
 export default config;
+
