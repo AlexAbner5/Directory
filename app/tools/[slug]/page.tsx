@@ -10,7 +10,7 @@ import FooterSectionCopy from "@/components/Footer/FooterSectionCopy"
 
 
 interface ToolPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 
@@ -30,7 +30,7 @@ const hasValidContent = (blocks: any[]): boolean => {
 };
 
 export default async function ToolPage({ params }: ToolPageProps) {
-  const { slug } = params;
+  const { slug } = await params;
   const tool = await getToolProfile({ slug });
 
   if (!tool) {
