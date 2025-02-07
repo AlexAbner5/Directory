@@ -7,7 +7,6 @@ import Link from "next/link"
 import { getToolProfile } from "@/lib/production/get-tool-profile"
 import { Header } from "@/components/Header"
 import FooterSectionCopy from "@/components/Footer/FooterSectionCopy"
-import { PageProps } from 'next/types'
 
 const hasValidContent = (blocks: any[]): boolean => {
   if (!blocks || blocks.length === 0) return false;
