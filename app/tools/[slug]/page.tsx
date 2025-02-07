@@ -10,10 +10,9 @@ import FooterSectionCopy from "@/components/Footer/FooterSectionCopy"
 
 
 interface ToolPageProps {
-  params: {
-    slug: string;
-  };
+  params: { slug: string };
 }
+
 
 const hasValidContent = (blocks: any[]): boolean => {
   if (!blocks || blocks.length === 0) return false;
