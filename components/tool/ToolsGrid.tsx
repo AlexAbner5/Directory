@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { ToolCard } from './ToolCard';
 import { ShowAllButton } from './ShowAllButton';
 import { CategoryFilter } from '../search/CategoryFilter';
-import { getSaasTools } from '@/lib/get-saas-tools';
+import { getSaasTools } from '@/lib/production/get-saas-tools';
 
 interface ToolsGridProps {
   searchQuery: string;
