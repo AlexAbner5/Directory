@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Globe, ThumbsUp, Eye, ArrowLeft, Star } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { getToolProfile } from "@/lib/get-tool-profile"
+import { getToolProfile } from "@/lib/production/get-tool-profile"
 import { Header } from "@/components/Header"
 import FooterSectionCopy from "@/components/Footer/FooterSectionCopy"
 
