@@ -19,12 +19,6 @@ const nextConfig = {
     serverActions: {
       allowedOrigins: ['localhost:3000']
     }
-  },
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
   }
 };
 
