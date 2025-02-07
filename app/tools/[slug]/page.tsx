@@ -7,6 +7,7 @@ import Link from "next/link"
 import { getToolProfile } from "@/lib/production/get-tool-profile"
 import { Header } from "@/components/Header"
 import FooterSectionCopy from "@/components/Footer/FooterSectionCopy"
+import { Metadata } from 'next'
 
 const hasValidContent = (blocks: any[]): boolean => {
   if (!blocks || blocks.length === 0) return false;
@@ -23,14 +24,19 @@ const hasValidContent = (blocks: any[]): boolean => {
   });
 };
 
-export default async function ToolPage({
+type PageProps = {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export default async function ToolPage({ 
   params,
-}: {
-  params: Promise<{ slug: string }> & { slug: string };
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }> & { [key: string]: string | string[] | undefined };
-}) {
-  const { slug } = params;
+  searchParams 
+}: PageProps) {
+  const { slug } = await params;
   const tool = await getToolProfile({ slug });
+  console.log(tool);
+  console.log(params);
 
   if (!tool) {
     return (
@@ -188,4 +194,11 @@ export default async function ToolPage({
       <FooterSectionCopy />
     </>
   );
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  return {
+    title: `Tool - ${slug}`,
+  }
 }
