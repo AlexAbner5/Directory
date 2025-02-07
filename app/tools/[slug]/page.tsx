@@ -7,7 +7,6 @@ import Link from "next/link"
 import { getToolProfile } from "@/lib/production/get-tool-profile"
 import { Header } from "@/components/Header"
 import FooterSectionCopy from "@/components/Footer/FooterSectionCopy"
-import { PageProps } from 'next'
 
 
 
@@ -28,7 +27,9 @@ const hasValidContent = (blocks: any[]): boolean => {
 
 export default async function ToolPage({
   params,
-}: PageProps<{ slug: string }>) {
+}: {
+  params: { slug: string };
+}) {
   const { slug } = params;
   const tool = await getToolProfile({ slug });
 
