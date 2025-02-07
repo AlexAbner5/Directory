@@ -10,7 +10,8 @@ import FooterSectionCopy from "@/components/Footer/FooterSectionCopy"
 
 
 interface ToolPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }> & { slug: string };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }> & { [key: string]: string | string[] | undefined };
 }
 
 
