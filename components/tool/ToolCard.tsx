@@ -30,6 +30,7 @@ interface ToolCardProps {
 }
 
 export function ToolCard({ tool }: ToolCardProps) {
+  
   const { Name, Description, category, logo, aiimagecategory, slug } = tool;
   const imageUrl = logo?.url || '/placeholder.jpg';
 

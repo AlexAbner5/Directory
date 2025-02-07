@@ -3,7 +3,7 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { getCategories } from "@/lib/get-categories";
+import { getCategories } from "@/lib/production/get-categories";
 
 interface CategoryFilterProps {
   onCategoryChange: (aiimagecategories: string) => void;
