@@ -29,8 +29,12 @@ const hasValidContent = (blocks: any[]): boolean => {
   });
 };
 
-export default async function ToolPage({ params }: ToolPageProps) {
-  const { slug } = await params;
+export default async function ToolPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const { slug } = params;
   const tool = await getToolProfile({ slug });
 
   if (!tool) {
@@ -87,104 +91,104 @@ export default async function ToolPage({ params }: ToolPageProps) {
             </div>
           </CardHeader>
 
-          {hasValidContent(tool.description) && (
-            <CardContent className="pt-6">
-              <div className="rounded-lg border border-[#333333] p-6">
-                <h2 className="text-xl font-semibold text-white mb-4">{tool.name} Review</h2>
-                <div className="text-white leading-relaxed">
-                  {tool.description.map((block: any, index: number) => (
-                    <p key={index} className="mb-4 whitespace-pre-line break-words">
-                      {block.children[0]?.text}
-                    </p>
-                  ))}
+            {hasValidContent(tool.description) && (
+              <CardContent className="pt-6">
+                <div className="rounded-lg border border-[#333333] p-6">
+                  <h2 className="text-xl font-semibold text-white mb-4">{tool.name} Review</h2>
+                  <div className="text-white leading-relaxed">
+                    {tool.description.map((block: any, index: number) => (
+                      <p key={index} className="mb-4 whitespace-pre-line break-words">
+                        {block.children[0]?.text}
+                      </p>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          )}
+              </CardContent>
+            )}
 
-          {hasValidContent(tool.KeyFeatures) && (
-            <CardContent className="pt-6">
-              <div className="rounded-lg border border-[#333333] p-6">
-                <h2 className="text-xl font-semibold text-white mb-4">{tool.name} Key Features</h2>
-                <div className="text-white leading-relaxed">
-                  {tool.KeyFeatures.map((block: any, index: number) => {
-                    if (block.type === "paragraph") {
-                      return (
-                        <p key={index}>
-                          {block.children.map((child: any, childIndex: number) => child.text || "No content available")}
-                        </p>
-                      );
-                    } else if (block.type === "list") {
-                      return (
-                        <ol key={index} className="list-decimal list-inside">
-                          {block.children.map((listItem: any, listIndex: number) => (
-                            <li key={listIndex}>
-                              {listItem.children.map((child: any, childIndex: number) => child.text || "No content available")}
-                            </li>
-                          ))}
-                        </ol>
-                      );
-                    } else {
-                      return null;
-                    }
-                  })}
+            {hasValidContent(tool.KeyFeatures) && (
+              <CardContent className="pt-6">
+                <div className="rounded-lg border border-[#333333] p-6">
+                  <h2 className="text-xl font-semibold text-white mb-4">{tool.name} Key Features</h2>
+                  <div className="text-white leading-relaxed">
+                    {tool.KeyFeatures.map((block: any, index: number) => {
+                      if (block.type === "paragraph") {
+                        return (
+                          <p key={index}>
+                            {block.children.map((child: any, childIndex: number) => child.text || "No content available")}
+                          </p>
+                        );
+                      } else if (block.type === "list") {
+                        return (
+                          <ol key={index} className="list-decimal list-inside">
+                            {block.children.map((listItem: any, listIndex: number) => (
+                              <li key={listIndex}>
+                                {listItem.children.map((child: any, childIndex: number) => child.text || "No content available")}
+                              </li>
+                            ))}
+                          </ol>
+                        );
+                      } else {
+                        return null;
+                      }
+                    })}
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          )}
+              </CardContent>
+            )}
 
-          {hasValidContent(tool.UseCases) && (
-            <CardContent className="pt-6">
-              <div className="rounded-lg border border-[#333333] p-6">
-                <h2 className="text-xl font-semibold text-white mb-4">{tool.name} Use Cases</h2>
-                <div className="text-white leading-relaxed">
-                  {tool.UseCases.map((block: any, index: number) => (
-                    <p key={index}>{block.children[0]?.text}</p>
-                  ))}
+            {hasValidContent(tool.UseCases) && (
+              <CardContent className="pt-6">
+                <div className="rounded-lg border border-[#333333] p-6">
+                  <h2 className="text-xl font-semibold text-white mb-4">{tool.name} Use Cases</h2>
+                  <div className="text-white leading-relaxed">
+                    {tool.UseCases.map((block: any, index: number) => (
+                      <p key={index}>{block.children[0]?.text}</p>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          )}
+              </CardContent>
+            )}
 
-          {tool.preview && (
-            <CardContent className="pt-6">
-              <div className="rounded-lg border border-[#333333] p-6">
-                <h2 className="text-xl font-semibold text-white mb-4">{tool.name} Preview</h2>
-                <div className="text-white leading-relaxed">
-                  <Image
-                    src={tool.preview}
-                    alt={tool.name}
-                    width={1200}
-                    height={675}
-                    className="w-full rounded-lg"
-                  />
+            {tool.preview && (
+              <CardContent className="pt-6">
+                <div className="rounded-lg border border-[#333333] p-6">
+                  <h2 className="text-xl font-semibold text-white mb-4">{tool.name} Preview</h2>
+                  <div className="text-white leading-relaxed">
+                    <Image
+                      src={tool.preview}
+                      alt={tool.name}
+                      width={1200}
+                      height={675}
+                      className="w-full rounded-lg"
+                    />
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          )}
+              </CardContent>
+            )}
 
-          {tool.DemoVideo && (
-            <CardContent className="pt-6">
-              <div className="rounded-lg border border-[#333333] p-6">
-                <h2 className="text-xl font-semibold text-white mb-4">{tool.name} Demo Video</h2>
-                <div className="text-white leading-relaxed">
-                  {tool.DemoVideo.includes("youtube.com") ? (
-                    <iframe
-                      src={tool.DemoVideo.replace("watch?v=", "embed/")}
-                      title={tool.name}
-                      width="100%"
-                      height="400"
-                      allowFullScreen
-                    ></iframe>
-                  ) : (
-                    <p>Unsupported video format</p>
-                  )}
+            {tool.DemoVideo && (
+              <CardContent className="pt-6">
+                <div className="rounded-lg border border-[#333333] p-6">
+                  <h2 className="text-xl font-semibold text-white mb-4">{tool.name} Demo Video</h2>
+                  <div className="text-white leading-relaxed">
+                    {tool.DemoVideo.includes("youtube.com") ? (
+                      <iframe
+                        src={tool.DemoVideo.replace("watch?v=", "embed/")}
+                        title={tool.name}
+                        width="100%"
+                        height="400"
+                        allowFullScreen
+                      ></iframe>
+                    ) : (
+                      <p>Unsupported video format</p>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          )}
-        </Card>
-      </div>
+              </CardContent>
+            )}
+          </Card>
+        </div>
       </div>
       <FooterSectionCopy />
     </>
