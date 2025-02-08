@@ -173,12 +173,17 @@ export default async function ToolPage({
               <div className="rounded-lg border border-[#333333] p-6">
                 <h2 className="text-xl font-semibold text-white mb-4">{tool.name} Demo Video</h2>
                 <div className="text-white leading-relaxed">
-                  {tool.DemoVideo.includes("youtube.com") ? (
+                  {tool.DemoVideo.includes("youtube.com") || tool.DemoVideo.includes("youtu.be") ? (
                     <iframe
-                      src={tool.DemoVideo.replace("watch?v=", "embed/")}
-                      title={tool.name}
+                      src={tool.DemoVideo
+                        .replace("watch?v=", "embed/")
+                        .replace("youtu.be/", "youtube.com/embed/")
+                        .split("&")[0]}
+                      title={`${tool.name} demo video`}
                       width="100%"
                       height="400"
+                      className="rounded-lg"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     ></iframe>
                   ) : (
