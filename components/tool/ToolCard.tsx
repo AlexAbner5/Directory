@@ -54,8 +54,7 @@ export function ToolCard({ tool }: ToolCardProps) {
         <div className="text-gray-300 text-sm line-clamp-2 mb-2">
           <BlocksRenderer content={Description} />
         </div>
-        <p className="text-gray-400 text-xs italic">Category: {category.name}</p>
-        <p className="text-gray-400 text-xs italic">Sub Category: {aiimagecategory.name}</p>
+        <p className="text-gray-400 text-xs italic">Category: {aiimagecategory.name}</p>
       </div>
       </div>
     </Link>
