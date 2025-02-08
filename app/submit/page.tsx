@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { getCategories } from "@/lib/get-categories";
+import { getCategories } from "@/lib/production/get-categories";
 import {
   Form,
   FormControl,
