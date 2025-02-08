@@ -20,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        {/* JSON-LD Schema Markup */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -28,24 +29,42 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@type': 'WebSite',
               name: 'AI Image Generators',
               url: 'https://www.aiimagegenerators.org/',
-              description: 'Directory of AI image generators. The best AI tools for creating images, drawings, illustrations, editing, sketching and more.',
+              description:
+                'Directory of AI image generators. The best AI tools for creating images, drawings, illustrations, editing, sketching and more.',
               publisher: {
                 '@type': 'Organization',
                 name: 'AI Image Generators',
                 logo: {
                   '@type': 'ImageObject',
-                  url: 'https://www.aiimagegenerators.org/images/logo.png'
-                }
+                  url: 'https://www.aiimagegenerators.org/images/logo.png',
+                },
               },
               potentialAction: {
                 '@type': 'SearchAction',
                 target: {
                   '@type': 'EntryPoint',
-                  urlTemplate: 'https://www.aiimagegenerators.org/search?q={search_term_string}'
+                  urlTemplate:
+                    'https://www.aiimagegenerators.org/search?q={search_term_string}',
                 },
-                'query-input': 'required name=search_term_string'
-              }
-            })
+                'query-input': 'required name=search_term_string',
+              },
+            }),
+          }}
+        />
+
+        {/* Google Analytics Tag */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-3BV6XRLEQZ"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-3BV6XRLEQZ');
+            `,
           }}
         />
       </head>
@@ -53,4 +72,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
 
