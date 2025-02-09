@@ -10,10 +10,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Best AI Image Generators - Create Stunning Images with AI',
     description: 'Discover the best AI image generators. Explore tools for creating AI-powered images.',
-    url: 'https://www.aiimagegenerators.org/',
+    url: 'https://aiimagegenerators.org/',
     type: 'website',
-    images: ['https://www.aiimagegenerators.org/images/og-image.jpg'],
-  },
+    images: 'https://aiimagegenerators.org/favicon.ico',
+    },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -28,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@context': 'https://schema.org',
               '@type': 'WebSite',
               name: 'AI Image Generators',
-              url: 'https://www.aiimagegenerators.org/',
+              url: 'https://aiimagegenerators.org/',
               description:
                 'Directory of AI image generators. The best AI tools for creating images, drawings, illustrations, editing, sketching and more.',
               publisher: {
@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 name: 'AI Image Generators',
                 logo: {
                   '@type': 'ImageObject',
-                  url: 'https://www.aiimagegenerators.org/images/logo.png',
+                  url: 'https://aiimagegenerators.org/favicon.ico',
                 },
               },
               potentialAction: {
@@ -44,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 target: {
                   '@type': 'EntryPoint',
                   urlTemplate:
-                    'https://www.aiimagegenerators.org/search?q={search_term_string}',
+                    'https://aiimagegenerators.org/search?q={search_term_string}',
                 },
                 'query-input': 'required name=search_term_string',
               },
@@ -72,5 +72,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-
-
