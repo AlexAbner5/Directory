@@ -8,6 +8,10 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Best AI Image Generators - Create Images with AI tools',
   description: 'Discover the best AI image generators. Explore tools for creating AI-powered images, illustrations, editing, sketches, and more.',
+  metadataBase: new URL('https://www.aiimagegenerators.org'),
+  alternates: {
+    canonical: '/'
+  },
   openGraph: {
     title: 'Best AI Image Generators - Create Images with AI tools',
     description: 'Discover the best AI image generators. Explore tools for creating AI-powered images.',
@@ -20,7 +24,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         {/* JSON-LD Schema Markup */}
         <script
           type="application/ld+json"
@@ -70,7 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://www.aiimagegenerators.org/" />
-      </Head>
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
