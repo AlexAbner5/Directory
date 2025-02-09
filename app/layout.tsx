@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Best AI Image Generators - Create Stunning Images with AI',
+  title: 'Best AI Image Generators - Create Stunning Images with AI tools',
   description: 'Discover the best AI image generators. Explore tools for creating AI-powered images, illustrations, editing, sketches, and more.',
   openGraph: {
     title: 'Best AI Image Generators - Create Stunning Images with AI',
