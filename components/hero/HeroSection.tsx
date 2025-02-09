@@ -16,9 +16,9 @@ export function HeroSection() {
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 mt-6">
             All AI Image Tools Directory!
           </h1>
-          <p className="text-2xl text-gray-400 mb-4 max-w-2xl mx-auto">
+          <h2 className="text-2xl text-gray-400 mb-4 max-w-2xl mx-auto">
             The best AI tools for creating images, drawings, illustrations, editing, sketching and more.
-          </p>
+          </h2>
           <p className="text-lg text-gray-500">
             AI Image is Made by →{' '}
             <Link href="https://www.alex-matias.com" target="_blank">
