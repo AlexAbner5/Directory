@@ -9,9 +9,7 @@ export const metadata: Metadata = {
   title: 'Best AI Image Generators - Create Images with AI tools',
   description: 'Discover the best AI image generators. Explore tools for creating AI-powered images, illustrations, editing, sketches, and more.',
   metadataBase: new URL('https://www.aiimagegenerators.org'),
-  alternates: {
-    canonical: 'https://www.aiimagegenerators.org'
-  },
+  alternates: { canonical: 'https://www.aiimagegenerators.org/' },
   openGraph: {
     title: 'Best AI Image Generators - Create Images with AI tools',
     description: 'Discover the best AI image generators. Explore tools for creating AI-powered images.',
