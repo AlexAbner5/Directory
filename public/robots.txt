@@ -6,4 +6,4 @@ Allow: /
 Host: https://www.aiimagegenerators.org
 
 # Sitemaps
-Sitemap: https://www.aiimagegenerators.org/sitemap.xml
+Sitemap: https://www.aiimagegenerators.org/sitemap-0.xml
