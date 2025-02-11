@@ -8,12 +8,12 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Best AI Image Generators - Create Images with AI tools',
   description: 'Discover the best AI image generators. Explore tools for creating AI-powered images, illustrations, editing, sketches, and more.',
-  metadataBase: new URL('https://www.aiimagegenerators.org'),
-  alternates: { canonical: 'https://www.aiimagegenerators.org/' },
+  metadataBase: new URL('https://aiimagegenerators.org'),
+  alternates: { canonical: 'https://aiimagegenerators.org' },
   openGraph: {
     title: 'Best AI Image Generators - Create Images with AI tools',
     description: 'Discover the best AI image generators. Explore tools for creating AI-powered images.',
-    url: 'https://aiimagegenerators.org/',
+      url: 'https://aiimagegenerators.org/',
     type: 'website',
     images: 'https://aiimagegenerators.org/favicon.ico',
     },
@@ -71,7 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://www.aiimagegenerators.org" />
+        <link rel="canonical" href="https://aiimagegenerators.org" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
