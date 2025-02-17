@@ -82,7 +82,7 @@ Content-Type: image/png
 
 ####
 
-get https://lionfish-app-tj3wh.ondigitalocean.app/api/saas-tools
+get https://lionfish-app-tj3wh.ondigitalocean.app/api/saas-tools?populate=*
 Authorization: Bearer 43eef1165870a0f7e9aa6a2bbc3e98747448ed191109b78f30027cffa1d243310c93a8df6375dadafa572a7b9bba0cddb9d89d033e327bb99d2cd773ccc97807c59be91202ddc37f15383ed5acfb2ea7757f70b8fe0299ec561f44dd2f7c83e01d11bea6d854d906cbffd4d5b375b06d213f00c39474e6de6a26b539b20ba6b2
 
 ####

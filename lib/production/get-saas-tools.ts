@@ -32,11 +32,11 @@ export async function getSaasTools() {
     return {
       id: item.id,
       name: item.Name,
-      logoUrl: `https://lionfish-app-tj3wh.ondigitalocean.app${item.logo?.url}` || '',
+      logoUrl: `https://directoryimg.sfo2.digitaloceanspaces.com${item.logo?.url}` || '',
       description: item.Description,
       category: item.category || '',
       aiimagecategory: item.aiimagecategory || '',
-      preview: `https://lionfish-app-tj3wh.ondigitalocean.app${item.Preview?.url}` || '',
+      preview: `https://directoryimg.sfo2.digitaloceanspaces.com${item.Preview?.url}` || '',
       slug: item.slug
     };
   });

@@ -1,4 +1,4 @@
-import { endpoint } from "./strapi";
+import { endpoint } from "./strapi-prod";
 
 interface StrapiSaaSTool {
     id: number;

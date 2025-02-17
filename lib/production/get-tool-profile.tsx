@@ -20,10 +20,10 @@ export async function getToolProfile({ slug }: { slug: string }) {
       description: tool.Description || "",
       shortDescription: tool.ShortDescription || "",
       logo: tool.logo?.url
-        ? `https://lionfish-app-tj3wh.ondigitalocean.app${tool.logo.url}`
+        ? `https://directoryimg.sfo2.digitaloceanspaces.com${tool.logo.url}`
         : null,
       preview: tool.Preview?.url
-        ? `https://lionfish-app-tj3wh.ondigitalocean.app${tool.Preview.url}`
+        ? `https://directoryimg.sfo2.digitaloceanspaces.com${tool.Preview.url}`
         : null,
       slug: tool.slug,
       visitWebsite: tool.VisitWebsite || "",
