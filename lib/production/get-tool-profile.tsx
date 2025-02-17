@@ -19,12 +19,8 @@ export async function getToolProfile({ slug }: { slug: string }) {
       name: tool.Name,
       description: tool.Description || "",
       shortDescription: tool.ShortDescription || "",
-      logo: tool.logo?.url
-        ? `https://directoryimg.sfo2.digitaloceanspaces.com${tool.logo.url}`
-        : null,
-      preview: tool.Preview?.url
-        ? `https://directoryimg.sfo2.digitaloceanspaces.com${tool.Preview.url}`
-        : null,
+      logo: tool.logo?.url || null, // Usamos directamente la URL sin concatenación
+      preview: tool.Preview?.url || null, // Usamos directamente la URL sin concatenación
       slug: tool.slug,
       visitWebsite: tool.VisitWebsite || "",
       category: tool.category?.name || "N/A",
@@ -41,3 +37,4 @@ export async function getToolProfile({ slug }: { slug: string }) {
     return null; // Retorna null en caso de error
   }
 }
+
