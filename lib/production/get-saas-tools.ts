@@ -32,11 +32,11 @@ export async function getSaasTools() {
     return {
       id: item.id,
       name: item.Name,
-      logoUrl: `https://directoryimg.sfo2.digitaloceanspaces.com${item.logo?.url}` || '',
+      logoUrl: item.logo?.url || '',  // No concatenes la URL base
       description: item.Description,
       category: item.category || '',
       aiimagecategory: item.aiimagecategory || '',
-      preview: `https://directoryimg.sfo2.digitaloceanspaces.com${item.Preview?.url}` || '',
+      preview: item.Preview?.url || '',  // No concatenes la URL base
       slug: item.slug
     };
   });
